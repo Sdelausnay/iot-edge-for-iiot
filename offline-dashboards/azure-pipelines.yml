@@ -116,7 +116,7 @@ stages:
         action: 'Push module images'
         containerregistrytype: 'Azure Container Registry'
         azureSubscriptionEndpoint: $(AZURE_SERVICE_CONNECTION)
-        azureContainerRegistry: '{"loginServer":"$(ACR_ADDRESS)", "id" : "/subscriptions/$(AZURE_SUBSCRIPTION_ID)/resourceGroups/$(ACR_RESOURCE_GROUP)/providers/Microsoft.ContainerRegistry/registries/$(ACR_NAME)"}'
+        azureContainerRegistry: '{"loginServer":"$(ACR_ADDRESS)"}'
         templateFilePath: '$(ROOT_DIR)/dashboard.deployment.template.json'
         defaultPlatform: $(BUILD_PLATFORM)
         fillRegistryCredential: 'true'
@@ -128,7 +128,7 @@ stages:
         action: 'Push module images'
         containerregistrytype: 'Azure Container Registry'
         azureSubscriptionEndpoint: $(AZURE_SERVICE_CONNECTION)
-        azureContainerRegistry: '{"loginServer":"$(ACR_ADDRESS)", "id" : "/subscriptions/$(AZURE_SUBSCRIPTION_ID)/resourceGroups/$(ACR_RESOURCE_GROUP)/providers/Microsoft.ContainerRegistry/registries/$(ACR_NAME)"}'
+        azureContainerRegistry: '{"loginServer":"$(ACR_ADDRESS)"}'
         templateFilePath: '$(ROOT_DIR)/publisher.deployment.template.json'
         defaultPlatform: $(BUILD_PLATFORM)
         fillRegistryCredential: 'true'
@@ -140,7 +140,7 @@ stages:
         action: 'Push module images'
         containerregistrytype: 'Azure Container Registry'
         azureSubscriptionEndpoint: $(AZURE_SERVICE_CONNECTION)
-        azureContainerRegistry: '{"loginServer":"$(ACR_ADDRESS)", "id" : "/subscriptions/$(AZURE_SUBSCRIPTION_ID)/resourceGroups/$(ACR_RESOURCE_GROUP)/providers/Microsoft.ContainerRegistry/registries/$(ACR_NAME)"}'
+        azureContainerRegistry: '{"loginServer":"$(ACR_ADDRESS)"}'
         templateFilePath: '$(ROOT_DIR)/simulator.deployment.template.json'
         defaultPlatform: $(BUILD_PLATFORM)
         fillRegistryCredential: 'true'
