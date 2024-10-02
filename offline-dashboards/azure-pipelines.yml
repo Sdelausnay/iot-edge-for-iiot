@@ -95,20 +95,20 @@ stages:
       displayName: Build Edge Modules Grafana and SqlEdge
     
     # Build Modules opcpublisher
-    - task: AzureIoTEdge@2
-      inputs:
-        action: 'Build module images'
-        templateFilePath: '$(ROOT_DIR)/publisher.deployment.template.json'
-        defaultPlatform: $(BUILD_PLATFORM)
-      displayName: Build Edge Module opcpublisher
+    # - task: AzureIoTEdge@2
+    #   inputs:
+    #     action: 'Build module images'
+    #     templateFilePath: '$(ROOT_DIR)/publisher.deployment.template.json'
+    #     defaultPlatform: $(BUILD_PLATFORM)
+    #   displayName: Build Edge Module opcpublisher
     
-    # Build Modules opcsimulator
-    - task: AzureIoTEdge@2
-      inputs:
-        action: 'Build module images'
-        templateFilePath: '$(ROOT_DIR)/simulator.deployment.template.json'
-        defaultPlatform: $(BUILD_PLATFORM)
-      displayName: Build Edge Module opcsimulator
+    # # Build Modules opcsimulator
+    # - task: AzureIoTEdge@2
+    #   inputs:
+    #     action: 'Build module images'
+    #     templateFilePath: '$(ROOT_DIR)/simulator.deployment.template.json'
+    #     defaultPlatform: $(BUILD_PLATFORM)
+    #   displayName: Build Edge Module opcsimulator
     
     # Push Modules Grafana and SqlEdge
     - task: AzureIoTEdge@2.238.1
@@ -123,28 +123,28 @@ stages:
       displayName: Push Edge Modules Grafana and SqlEdge
 
     # Push Module opcpublisher
-    - task: AzureIoTEdge@2.238.1
-      inputs:
-        action: 'Push module images'
-        containerregistrytype: 'Azure Container Registry'
-        azureSubscriptionEndpoint: $(AZURE_SERVICE_CONNECTION)
-        azureContainerRegistry: '{"loginServer":"$(ACR_ADDRESS)"}'
-        templateFilePath: '$(ROOT_DIR)/publisher.deployment.template.json'
-        defaultPlatform: $(BUILD_PLATFORM)
-        fillRegistryCredential: 'true'
-      displayName: Push Edge Modules opcpublisher
+    # - task: AzureIoTEdge@2.238.1
+    #   inputs:
+    #     action: 'Push module images'
+    #     containerregistrytype: 'Azure Container Registry'
+    #     azureSubscriptionEndpoint: $(AZURE_SERVICE_CONNECTION)
+    #     azureContainerRegistry: '{"loginServer":"$(ACR_ADDRESS)"}'
+    #     templateFilePath: '$(ROOT_DIR)/publisher.deployment.template.json'
+    #     defaultPlatform: $(BUILD_PLATFORM)
+    #     fillRegistryCredential: 'true'
+    #   displayName: Push Edge Modules opcpublisher
 
-    # Push Module opcsimulator
-    - task: AzureIoTEdge@2.238.1
-      inputs:
-        action: 'Push module images'
-        containerregistrytype: 'Azure Container Registry'
-        azureSubscriptionEndpoint: $(AZURE_SERVICE_CONNECTION)
-        azureContainerRegistry: '{"loginServer":"$(ACR_ADDRESS)"}'
-        templateFilePath: '$(ROOT_DIR)/simulator.deployment.template.json'
-        defaultPlatform: $(BUILD_PLATFORM)
-        fillRegistryCredential: 'true'
-      displayName: Push Edge Modules opcsimulator
+    # # Push Module opcsimulator
+    # - task: AzureIoTEdge@2.238.1
+    #   inputs:
+    #     action: 'Push module images'
+    #     containerregistrytype: 'Azure Container Registry'
+    #     azureSubscriptionEndpoint: $(AZURE_SERVICE_CONNECTION)
+    #     azureContainerRegistry: '{"loginServer":"$(ACR_ADDRESS)"}'
+    #     templateFilePath: '$(ROOT_DIR)/simulator.deployment.template.json'
+    #     defaultPlatform: $(BUILD_PLATFORM)
+    #     fillRegistryCredential: 'true'
+    #   displayName: Push Edge Modules opcsimulator
 
     # Add latest tag
     - task: AzureCLI@2
