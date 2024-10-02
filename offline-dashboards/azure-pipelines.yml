@@ -81,6 +81,11 @@ stages:
           $publishedNodes | ConvertTo-Json -depth 32 | Set-Content '$(ROOT_DIR)/modules/opcpublisher/publishedNodes.json' 
       displayName: build publishedNodes.json
 
+    - task: Bash@3
+      inputs:
+        targetType: 'inline'
+        script: 'pip install -U iotedgedev'
+        
     # Build Modules Grafana and SqlEdge
     - task: AzureIoTEdge@2
       inputs:
