@@ -111,7 +111,7 @@ stages:
       displayName: Build Edge Module opcsimulator
     
     # Push Modules Grafana and SqlEdge
-    - task: AzureIoTEdge@2
+    - task: AzureIoTEdge@2.238.1
       inputs:
         action: 'Push module images'
         containerregistrytype: 'Azure Container Registry'
@@ -123,7 +123,7 @@ stages:
       displayName: Push Edge Modules Grafana and SqlEdge
 
     # Push Module opcpublisher
-    - task: AzureIoTEdge@2
+    - task: AzureIoTEdge@2.238.1
       inputs:
         action: 'Push module images'
         containerregistrytype: 'Azure Container Registry'
@@ -135,7 +135,7 @@ stages:
       displayName: Push Edge Modules opcpublisher
 
     # Push Module opcsimulator
-    - task: AzureIoTEdge@2
+    - task: AzureIoTEdge@2.238.1
       inputs:
         action: 'Push module images'
         containerregistrytype: 'Azure Container Registry'
