@@ -11,9 +11,9 @@
             "loggingOptions": "",
             "registryCredentials": {
               "acrlayersdemo": {
-                "username": "acrlayersdemo",
-                "password": "/QHuHurV2x9HzpJsyQnKxOAtOEQpy96LE4d8CDugwQ+ACRAjn3Th",
-                "address": "acrlayersdemo.azurecr.io"
+                "username": "${ACR_USER}",
+                "password": "${ACR_PASSWORD}",
+                "address": "${ACR_ADDRESS}"
               }
             }
           }
